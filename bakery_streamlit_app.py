@@ -25,7 +25,6 @@ def prepare_data(df):
     bak_df["date_time"] = pd.to_datetime(bak_df["date_time"])
     bak_df["hour"] = bak_df["date_time"].dt.hour
     bak_df["month"] = bak_df["date_time"].dt.to_period("M").astype(str)
-    bak_df["date"] = bak_df["date_time"].dt.date
 
     return bak_df
 
