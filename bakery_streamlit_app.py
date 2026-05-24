@@ -55,15 +55,7 @@ colors = {
 
 # Sidebar controls
 
-st.sidebar.header("Text size")
-
-text_size = st.sidebar.slider(
-    "Use the slider to select content text size",
-    min_value=16,
-    max_value=24,
-    value=18,
-    step=1
-)
+text_size = 18
 
 st.sidebar.header("Filters")
 
@@ -133,9 +125,9 @@ fig_top_items.update_layout(
     yaxis_title="Item",
     yaxis={"categoryorder": "total ascending"},
     xaxis={"range": [0, item_counts["Count"].max() * 1.20]},
-    plot_bgcolor=colors["linen"],
-    paper_bgcolor=colors["linen"],
-    font_color=colors["darkslategray"],
+    plot_bgcolor=colors["background"],
+    paper_bgcolor=colors["background"],
+    font_color=colors["text"],
 )
 
 fig_top_items.update_traces(
@@ -208,9 +200,9 @@ fig_monthly.update_layout(
     yaxis_title="Item",
     yaxis={"categoryorder": "total ascending"},
     xaxis={"range": [0, max_count * 1.30]},
-    plot_bgcolor=colors["linen"],
-    paper_bgcolor=colors["linen"],
-    font_color=colors["darkslategray"],
+    plot_bgcolor=colors["background"],
+    paper_bgcolor=colors["background"],
+    font_color=colors["text"],
     margin={"l": 160, "r": 140, "t": 90, "b": 90},
     transition={"duration": 800},
 )
@@ -296,9 +288,9 @@ fig_bubble.update_layout(
     title_font_size=text_size + 6,
     xaxis_title="Hour of day",
     yaxis_title="Item",
-    plot_bgcolor=colors["linen"],
-    paper_bgcolor=colors["linen"],
-    font_color=colors["darkslategray"],
+    plot_bgcolor=colors["background"],
+    paper_bgcolor=colors["background"],
+    font_color=colors["text"],
     margin={"l": 180, "r": 120, "t": 90, "b": 90},
     xaxis={
         "tickmode": "array",
