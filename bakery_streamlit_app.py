@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 st.title("Bakery Purchases Dashboard")
-st.write("Explore item popularity, monthly trends, order contents, and purchase times.")
+st.write("Explore item popularity, monthly trends, order contents, and purchase times")
 
 
 # Load and prepare data
@@ -30,10 +30,7 @@ def prepare_data(df):
     return bak_df
 
 
-# This assumes your original dataframe is already called df.
-# If you load from CSV instead, replace this with pd.read_csv(...)
 bak_df = prepare_data(df)
-
 
 # Options
 
@@ -59,7 +56,7 @@ text_size = 18
 
 st.sidebar.header("Filters")
 
-st.sidebar.write("Use the filters to explore bakery purchases by item, time, and order structure.")
+st.sidebar.write("Use the filters to explore bakery purchases by item, time, and order structure")
 
 selected_period = st.sidebar.selectbox(
     "Select period of day",
@@ -98,7 +95,7 @@ if selected_day_type != "all":
 # Section 1: Top bakery items
 
 st.header("Top bakery items")
-st.write("Use the sidebar to filter results and explore bakery behavior.")
+st.write("Use the sidebar to filter results and explore bakery behavior")
 
 item_counts = (
     filtered_df["Item"]
@@ -144,8 +141,7 @@ st.plotly_chart(fig_top_items, use_container_width=True)
 
 st.header("Monthly Evolution of Top Bakery Items")
 st.write(
-    "Use the sidebar to filter results and explore bakery behavior over time. "
-    "October 2016 and April 2017 are partial months, so compare them carefully."
+    "Use the sidebar to filter results and explore bakery behavior over time"
 )
 
 top_items = (
@@ -220,7 +216,7 @@ st.plotly_chart(fig_monthly, use_container_width=True)
 # Section 3: Order contents
 
 st.header("Order contents")
-st.write("Select a transaction number to visualize its contents.")
+st.write("Select a transaction number to visualize its contents")
 
 selected_transaction = st.selectbox(
     "Transaction number",
@@ -244,8 +240,7 @@ st.dataframe(order_items, use_container_width=True)
 
 st.header("Item popularity by hour")
 st.write(
-    "Use the sidebar to restrict contents and hover over the bubbles to see details. "
-    "Larger bubbles indicate more unique transactions."
+    "Use the sidebar to restrict contents and hover over the bubbles to see details | Larger bubbles indicate more transactions"
 )
 
 bubble_df_source = filtered_df.copy()
