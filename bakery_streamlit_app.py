@@ -16,6 +16,8 @@ st.write("Explore item popularity, monthly trends, order contents, and purchase 
 
 # Load and prepare data
 
+df = pd.read_csv("bread_basket_dataset.csv")
+
 @st.cache_data
 def prepare_data(df):
     bak_df = df.copy()
